@@ -1,0 +1,37 @@
+{% extends 'shopping/base.html' %}
+
+{% block body %}
+<h1>shopping list</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                {% for shopping in shoppings %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="{{shopping.cover.url}}" class="card-img-top" />
+                        <div class="card-body">
+                            <h3>{{shopping.name}}</h3>
+                            <h4>${{shopping.price}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="alert alert-warning">
+                    No products added here
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
