@@ -7,6 +7,7 @@ class Shopping(models.Model):
 
     name = models.CharField(max_length=200, null=False)
     brand = models.CharField(max_length=200, null=False)
+    # description = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
 
     cover = models.ImageField(upload_to='uploads/%Y/$m/%d')
@@ -14,5 +15,5 @@ class Shopping(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name

@@ -1,0 +1,25 @@
+{% extends 'shopping/base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{shopping.name}}
+                <a href="{% url 'shopping_show' shopping.id %}? action=edit">Edit</a>
+                <a href="{% url 'shopping_show' shopping.id %}? action=del">Delete</a>
+            </div>
+            {% if edit %}
+            <div class="col-md-6">
+                <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Add Product</button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock body %}
+
+

@@ -17,6 +17,10 @@ class ShoppingForm(forms.ModelForm):
                 'class' : 'form-control',
                 'placeholder' : 'product brand'
             }),
+            # 'description' : forms.Textarea(attrs={
+            #     'class' : 'form-control',
+            #     'placeholder' : 'product description'
+            # }),
             'price' : forms.TextInput(attrs={
                 'class' : 'form-control',
                 'placeholder' : 'product price',

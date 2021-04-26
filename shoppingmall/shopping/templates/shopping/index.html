@@ -21,6 +21,8 @@
                         <div class="card-body">
                             <h3>{{shopping.name}}</h3>
                             <h4>${{shopping.price}}</h4>
+                            <h4>{{shopping.description}}</h4>
+                            <a href="{% url 'shopping_show' shopping.id %}">Show</a>
                         </div>
                     </div>
                 </div>

@@ -5,5 +5,5 @@ from .views import *
 
 urlpatterns = [
     path('', views_index, name='shopping_index'),
-    # path('show/<uuid:pk>', view_show, name='shopping_show')
+    path('show/<uuid:pk>', views_show, name='shopping_show')
 ]

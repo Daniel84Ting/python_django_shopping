@@ -9,9 +9,14 @@
     <title>Document</title>
 </head>
 <body>
+    {% if message %}
+        {% for message in messages %}
+            <div class="alert elert-{% if message.tags == 'success' %}{{message.tags}}{% else %}danger{% endif %}">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% block body %}
-
-
     {% endblock body %}
 
 </body>
